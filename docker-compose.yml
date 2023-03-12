@@ -1,0 +1,33 @@
+version: '3.1'
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: heytec@123
+      MYSQL_DATABASE: site
+    ports:
+      - '6556:3306'
+    volumes:
+      - ~/site-db:/var/lib/mysql
+    expose:
+      - '3306'
+  wordpress:
+    image: wordpress
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: heytec@123
+      WORDPRESS_DB_NAME: site
+      WORDPRESS_TABLE_PREFIX: ps
+    ports:
+      - '8084:80'
+    volumes:
+      - ~/site-wordpress:/var/www/html
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - '8085:8080'
