@@ -80,7 +80,9 @@
 <div align="center">
 <img src="image/ubuntu/terminal.png" alt="Tela do terminal" width="500" heigth="500">
 </div>
+
 ---
+
 # Configurador Ubuntu Server
 Após ter concluído a instalação do Ubuntu,  vamos fazer algumas configurações básicas u envolve várias etapas para garantir que ele esteja seguro, atualizado e pronto para ser usado. Aqui estão algumas configurações e instalação de ferramentas básicas que você pode considerar:
 
