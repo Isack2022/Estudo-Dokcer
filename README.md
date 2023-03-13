@@ -31,7 +31,7 @@
         + Wordpress
 ---
 
-# Instalação do virtual box 
+# Instalação do Virtual Box 
 1. Abra o navegador e acesse o site oficial do VirtualBox em https://www.virtualbox.org/.
 
 2. Clique no botão "Downloads" no menu principal.
