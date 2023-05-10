@@ -234,42 +234,42 @@ Criar um arquivo .yml com o vim chamando Docker-compose:
 E dentro do arquivo você colocar os seguintes alguns códigos que sempre serão alinhado (NUNCA COLOCAR O COMENTARIO DO LADO COMO ABAIXO):
 
 > <pre><code>
->version: '3.1' #versão
+>version: '3.1' #Versão
 >services: 
->  db: # nome do container
->    image: mysql:latest #image do mysql
->    restart: always #reiniciar o serviço
+>  db: # Nome do container
+>    image: mysql:latest #Imagem do mysql
+>    restart: always #Reiniciar o serviço
 >    environment:
->      MYSQL_ROOT_PASSWORD: senac@123 #senha
->      MYSQL_DATABSE: site #nome do banco
->    ports: #porta do mysql
+>      MYSQL_ROOT_PASSWORD: senac@123 #Senha
+>      MYSQL_DATABSE: site #Nome do banco
+>    ports: #Porta do mysql
 >      - '6556:3306'
 >    volumes: #Volume do mysql/Backup
 >      - ~/site-db:/var/lib/mysql
->    expose:
+>    expose: #Expor a porta
 >      - '3306'
 >
->  wordpress: # nome do container 
->    image: wordpress # image do wordpress
->    restart: always #reiniciar o serviço
+>  wordpress: # Nome do container 
+>    image: wordpress # Imagem do wordpress
+>    restart: always #Reiniciar o serviço
 >    environment:
->      WORDPRESS_DB_HOST: db #conexão do banco de dados 
->      WORDPRESS_DB_USER: root #usuario do wordpress
->      WORDPRESS_DB_PASSWORD: senac@123 #senha
->      WORDPRESS_DB_NAME: site #nome do banco de dados
->      WORDPRESS_TABLE_PREFIX: ps
->    ports: #porta do wordpress
+>      WORDPRESS_DB_HOST: db #Conexão do banco de dados 
+>      WORDPRESS_DB_USER: root #Usuario do wordpress
+>      WORDPRESS_DB_PASSWORD: senac@123 #Senha
+>      WORDPRESS_DB_NAME: site #Nome do banco de dados
+>      WORDPRESS_TABLE_PREFIX: ps # Tabela de prefixo
+>    ports: #Porta do wordpress
 >      - '8084:80'
 >    volumes: #Volume do wordpress
 >      - ~/site-wordpres:/var/www/html
->    expose:
->      - '80'
+>    expose: #Expor a porta
+>      - '80' 
 >
->  adminer:
->    image: adminer
->    restart: always
+>  adminer: # Nome do container 
+>    image: adminer # Imagem do adminer
+>    restart: always #Reiniciar o serviço
 >    ports:
->      - '8085:8080'
+>      - '8085:8080' #Porta do adminer
 ></pre></code>
 
 Para iniciar o docker-compose:
